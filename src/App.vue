@@ -1,9 +1,11 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link :to="'/lr/'+uid" tag="button" replace>lr</router-link> |
+      <router-link to="/joker" replace>joker</router-link>|
+      <router-link to="/" replace>home</router-link>
     </div>
+    <!-- router-view -->
     <router-view/>
   </div>
 </template>
@@ -25,7 +27,21 @@
   color: #2c3e50;
 }
 
-#nav a.router-link-exact-active {
+#nav .router-link-exact-active {
   color: #42b983;
 }
 </style>
+
+<script>
+export default {
+  name: 'app',
+  data() {
+    return {
+      uid:'joker'
+    }
+  },
+  methods: {
+    
+  },
+}
+</script>

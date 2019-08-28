@@ -34,5 +34,7 @@
 3. Option + Shift + Up 向上复制行,Option + Shift + Down 向下复制行
 4. Ctrl + G 跳转至某行Ctrl + G 跳转至某行
 5. Command + Shift + V Markdown预览窗口
+6. Command + B 打开/关闭侧边栏
 
 ----
+- Vetur默认使用 eslint-plugin-vue@beta 来检测 <template>,修改 vetur.validation.template 为false即可

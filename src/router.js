@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+// const rongjoker = require('./components/rongjoker.vue')
 
 Vue.use(Router)
 
@@ -24,16 +25,38 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
-      path: '/joker',
-      name:'joker',
-      component: ()=> import('./components/joker.vue')
-
-    },
-    {
       path: '/lr/:uid',
-      // name:'lr',
-      component: ()=> import('./components/lr.vue')
+      component: () => import('./components/lr.vue')
 
     }
+    ,
+    {
+      path: '/joker',
+      name: 'joker',
+      component: () => import('./components/joker.vue')
+    }
+    ,
+    {
+      path: '/joker1',
+      component: () => import('./components/joker1.vue')
+    }
+    ,
+    {
+      path: '/joker2',
+      component: () => import('./components/joker2.vue')
+    }
+    ,
+    {
+      path: '/joker3',
+      component: () => import('./components/joker3.vue')
+    }
+    ,
+    {
+      path: '/rongjoker',
+      name: 'rongjoker',
+      component: () => import('./components/rongjoker.vue')
+    }
+
+
   ]
 })

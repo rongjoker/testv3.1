@@ -4,7 +4,8 @@
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <!-- <nav-bar></nav-bar> -->
     <NavBar class="home-nav"><div slot="center" >我是首页，而且我在中间呢</div></NavBar>
-    {{status}}
+    <!-- {{status}} -->
+    <user></user>
   </div>
 </template>
 
@@ -12,6 +13,7 @@
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
 import NavBar from 'components/common/navBar/Home'
+import User from 'components/content/user/List'
 
 import {appStatus} from 'network/status'
 
@@ -19,7 +21,8 @@ export default {
   name: 'home',
   components: {
     HelloWorld,
-    NavBar
+    NavBar,
+    User
   },
   computed: {
     status(){

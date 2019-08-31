@@ -70,3 +70,5 @@ module.exports = {
 3. 脚手架vue-cli 安装插件的命令为： `npm install vue-router --save `
 4. 添加投影样式 `box-shadow: 0 1px 1px rgba(100, 100, 100, .1)`
 
+### 2019-08-31 ###
+1. 引入element : `vue add element`

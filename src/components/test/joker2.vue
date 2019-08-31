@@ -1,6 +1,21 @@
 <!--  -->
 <template>
-<div class=''></div>
+<div class='joker2'> 
+
+  <h2>i am joker2</h2>
+
+  <h3>
+
+    my profile is {{$route.query}}
+
+
+
+  </h3>
+
+
+
+
+</div>
 </template>
 
 <script>
@@ -9,7 +24,7 @@
 
 export default {
 //import引入的组件需要注入到对象中才能使用
-name: 'joker1',
+name: 'joker2',
 components: {},
 data() {
 //这里存放数据
@@ -23,6 +38,22 @@ computed: {},
 watch: {},
 //方法集合
 methods: {
+
+  kill(){
+
+    let weapen = 'ak47';
+    
+    let rifle = 'm16a2';
+    console.log('let rifle : ', rifle );
+
+    
+
+
+
+
+
+  }
+
 
 },
 //生命周期 - 创建完成（可以访问当前this实例）

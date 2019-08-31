@@ -35,6 +35,38 @@
 4. Ctrl + G 跳转至某行Ctrl + G 跳转至某行
 5. Command + Shift + V Markdown预览窗口
 6. Command + B 打开/关闭侧边栏
+7. 安装 javascript console utils后，command+shift+L选中对象，自动生成console.log；command+shift+D 删除文件中所有的console.logs
 
 ----
-- Vetur默认使用 eslint-plugin-vue@beta 来检测 <template>,修改 vetur.validation.template 为false即可
+- Vetur默认使用 eslint-plugin-vue@beta 来检测 `<template>`,修改 vetur.validation.template 为false即可
+- `this.$router.push`  操作路由；`this.$route.query` 获取路由传输的数据
+- promise 用优雅的方式进行移步操作，解决回调地狱
+
+### 2019-08-28 ###
+1. 引入normalize.css 
+2. `vue.config.js`配置别名：
+```
+module.exports = {
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/v3.1/'
+    : '/'
+    ,
+
+    configureWebpack: {
+      resolve: {
+        alias: {
+          'assets': '@src/assets',
+          'common': '@src/common',
+          'components': '@src/components',
+          'views': '@src/views',
+        }
+      }
+
+    }
+
+
+}
+```
+3. 脚手架vue-cli 安装插件的命令为： `npm install vue-router --save `
+4. 添加投影样式 `box-shadow: 0 1px 1px rgba(100, 100, 100, .1)`
+

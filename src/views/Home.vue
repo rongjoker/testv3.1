@@ -1,18 +1,43 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
+    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <!-- <nav-bar></nav-bar> -->
+    <NavBar class="home-nav"><div slot="center" >我是首页，而且我在中间呢</div></NavBar>
+    {{status}}
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
+import NavBar from 'components/common/navBar/Home'
+
+import {appStatus} from 'network/status'
 
 export default {
   name: 'home',
   components: {
-    HelloWorld
-  }
+    HelloWorld,
+    NavBar
+  },
+  computed: {
+    status(){
+      let res = appStatus();
+      console.log('res: ', res);
+      
+
+      return res;
+
+    }
+  },
 }
 </script>
+
+<style scoped>
+
+.home-nav {
+  color: grey;
+}
+
+</style>

@@ -72,3 +72,26 @@ module.exports = {
 
 ### 2019-08-31 ###
 1. 引入element : `vue add element`
+2. 父子组建传递数据
+父组件：
+```
+<detail :form2 = "form2" :aka="message"  ></detail>
+```
+子组件：
+```
+props: {
+     form2: {
+     type :Object,
+     default(){
+       return {}
+     }
+   },
+   aka: {
+     type :String,
+     default(){
+       return ''
+     }
+   }
+
+}
+```

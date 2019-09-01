@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'PorscheNext';  /* project id 749700 */
+    src: url('~assets/font/PorscheNextTTRegular.eot'); /* IE9 Compat Modes */
+    src: 
+    // url('/static/font2/PorscheNextTTRegular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+             url('~assets/font/PorscheNextTTRegular.woff') format('woff'), /* Modern Browsers */
+             url('~assets/font/PorscheNextTTRegular.ttf')  format('truetype') /* Safari, Android, iOS */
+            //  ,url('/static/font2/PorscheNextTTRegular.svg#PorscheNextTTRegular') format('svg')
+             ;
+
+
+    
+}
+html,body, div, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, h6, i, b, textarea, button, input, select, figure, figcaption {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-style: normal;
+    font-family: PorscheNext,SimHei, 黑体, 宋体, SimSun, sans-serif;
+    text-decoration: none;
+    border: none;
+    font-weight: normal;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color:transparent;
+    -webkit-font-smoothing: antialiased;
+    &:hover{
+        outline: none;
+    }
+}
+
+
+  
+
+input[type="button"], input[type="submit"], input[type="search"], input[type="reset"] {
+    -webkit-appearance: none;
+}
+
+textarea { -webkit-appearance: none;}   
+
+html,body{
+    height: 100%;
+    width: 100%;
+    background-color: #F5F5F5;
+}
+
+.clear:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.clear{
+    zoom:1;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.margin{
+    margin: 0 auto;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.ellipsis{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@keyframes backOpacity{
+   0%   { opacity: 1 }
+   25%  { opacity: .5 }
+   50%  { opacity: 1 }
+   75%  { opacity: .5 }
+   100% { opacity: 1 }
+}
+
+.animation_opactiy{
+    animation: backOpacity 2s ease-in-out infinite;
+}

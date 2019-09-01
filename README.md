@@ -95,3 +95,16 @@ props: {
 
 }
 ```
+### 2019-09-01 ###
+1. css 使用别名需要加`~`,如`background-image: url("~assets/img/login/backgroundImg2.jpg");`
+2. axios post请求参数是`data`,get请求参数是`params`,参考文档：http://www.axios-js.com/zh-cn/docs/
+3. 解决`NavigationDuplicated {_name: "NavigationDuplicated", name: "NavigationDuplicated"}`这种bug的方案是在router.js中加代码：
+```
+import Vue from 'vue'
+import Router from 'vue-router'
+
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+```

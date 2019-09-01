@@ -1,7 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
 Vue.use(Router)
+
+
+
+
 
 
 const vueRouter = new Router({
@@ -10,9 +19,39 @@ const vueRouter = new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: () => import('views/Home.vue')
+      redirect: '/login'
+      // name: 'home',
+      // component: () => import('views/Home.vue')
     },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('components/content/login/Index')
+    },
+    {
+      path: '/index',
+      name: 'home',
+      component: () => import('components/content/home/Home'),
+      children:[
+
+        // {
+        //   path: '',
+        //   redirect: 'permissionsUser'
+        // }
+        // ,
+        {
+          path: 'home',
+          name: 'hello',
+          component: () => import('components/content/hello/Hello')
+        },
+
+        {
+          path: 'permissionsUser',
+          component: () => import('components/content/joker/Joker')
+        }
+      ]
+    },
+  
     {
       path: '/about',
       name: 'about',

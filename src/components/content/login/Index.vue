@@ -123,7 +123,14 @@ export default {
       },(error)=>{
         console.log('error: ', error);
         this.loading = false;
-        // this.open("登录失败",`${res.err_msg}`);
+        // this.open("登录失败",`${error}`);
+
+this.$message({
+          showClose: true,
+          message: error,
+          type: 'error'
+        });
+
       });
     },
     submitForm(formName) {

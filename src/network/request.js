@@ -17,7 +17,10 @@ export function getAjax(url, params){
   
     ).then(res=>{
       resolve(res)
-    })
+    },err=>{
+      reject(err)
+    }
+    )
 
   }
 
@@ -80,7 +83,9 @@ export function req(config,success,failure){
     if (res == undefined) {
       return
     }
+    console.log('res.data: ', res.data);
     if (res.data.err_code == "00000") {
+      
       return res.data;
     } else if (res.data.err_code == "10003") {
       vue.prototype.$alert(res.data.err_msg, '错误', {
@@ -95,6 +100,9 @@ export function req(config,success,failure){
       })
   
   
+    }else{
+      throw res.data.err_msg; 
+
     }
 
   },error=>{})

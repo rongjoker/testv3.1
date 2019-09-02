@@ -1,4 +1,6 @@
 import axios from 'axios'
+import vue from 'vue';
+import router from '@/router/index.js';
 import { resolve } from 'path';
 import { rejects } from 'assert';
 
@@ -50,17 +52,24 @@ export function post(url, params){
 
 
 export function req(config,success,failure){
-  console.log('config: ', config);
 
   const instance = axios.create({
     baseURL: 'http://localhost:9999/',
     timeout: 5000
-
-
   }
   );
 
   instance.interceptors.request.use(config =>{
+    if (undefined != sessionStorage.getItem("userId")) {
+      config.headers.userId = sessionStorage.getItem("userId");
+    }
+
+    if (config.method === 'get') {
+      let timestamp = new Date().getTime();
+      config.params['tamp'] = timestamp;
+    }
+
+
     return config;
   },err=>{
     console.log('err: ', err);
@@ -68,18 +77,30 @@ export function req(config,success,failure){
   )
 
   instance.interceptors.response.use(res=>{
-    return res.data;
+    if (res == undefined) {
+      return
+    }
+    if (res.data.err_code == "00000") {
+      return res.data;
+    } else if (res.data.err_code == "10003") {
+      vue.prototype.$alert(res.data.err_msg, '错误', {
+        confirmButtonText: '确定',
+        callback: action => {
+  
+          router.push({
+            path: "/login"
+          })
+  
+        }
+      })
+  
+  
+    }
+
   },error=>{})
+
+  console.log('config: ', config);
 
   return instance(config);
 
-  //  instance(config).then(
-  //    res=>{
-  //      console.log('res: ', res);
-  //      success(res)
-  //    }
-  //  ).catch(err=>{
-  //    console.log('err: ', err);
-  //    failure(err)
-  //  })
 }

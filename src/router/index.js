@@ -33,12 +33,6 @@ const vueRouter = new Router({
       name: 'home',
       component: () => import('components/content/home/Home'),
       children:[
-
-        // {
-        //   path: '',
-        //   redirect: 'permissionsUser'
-        // }
-        // ,
         {
           path: 'home',
           name: 'hello',
@@ -47,7 +41,7 @@ const vueRouter = new Router({
 
         {
           path: 'permissionsUser',
-          component: () => import('components/content/joker/Joker')
+          component: () => import('components/content/permissions_user/Home')
         }
       ]
     },
@@ -69,11 +63,11 @@ const vueRouter = new Router({
       component: () => import('components/test/joker.vue'),
       children:[
 
-        {
-          path: '',
-          redirect: 'joker1'
-        }
-        ,
+        // {
+        //   path: '',
+        //   redirect: 'joker1'
+        // }
+        // ,
 
         {
           path: 'joker1',

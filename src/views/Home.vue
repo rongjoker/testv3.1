@@ -11,7 +11,6 @@
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
 import NavBar from 'components/common/navBar/Home'
 import User from 'components/content/user/List'
 
@@ -20,7 +19,6 @@ import {appStatus} from 'network/httpq'
 export default {
   name: 'home',
   components: {
-    HelloWorld,
     NavBar,
     User
   },

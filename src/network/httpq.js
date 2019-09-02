@@ -5,6 +5,10 @@ export function appStatus(){
   return getAjax('sfa-app/status');
 }
 
+export function userManagementList(param){
+  return post('userManagement/list',param);
+}
+
 export function login(param){
   return post('login',param)
 }

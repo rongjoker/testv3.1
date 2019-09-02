@@ -113,12 +113,6 @@ export default {
         sessionStorage.userId = res.result.userId;
         sessionStorage.dealerName = res.result.dealerName;
         sessionStorage.district = res.result.district;
-        // console.log('res.result.district',res.result.district);
-        // res.result.menuInfo.push({"id":8,"pId":"5","name":"相册管理","icon":"photo","menuUrl":"photoAlbumList","checked":null})
-        // res.result.menuInfo.push({"id":9,"pId":"5","name":"海报管理","icon":"poster","menuUrl":"menuPoster","checked":null})
-        // res.result.menuInfo.push({"id":10,"pId":"5","name":"宣传管理","icon":"propaganda","menuUrl":"menuPropaganda","checked":null})
-        // res.result.menuInfo.push({"id":11,"pId":"5","name":"小程序管理","icon":"applet","menuUrl":"menuApplet","checked":null})
-        // res.result.menuInfo.push({"id":12,"pId":"1","name":"抽奖码导出","icon":"quanxian","menuUrl":"goodLuckCode","checked":null})
         sessionStorage.asideData = JSON.stringify(res.result.menuInfo);
 
 

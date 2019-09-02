@@ -37,19 +37,9 @@ import {login} from 'network/httpq';
       return {
         icon: {
           quanxian: require('assets/img/menu/quanxian.png'),
-          // site: require('assets/img/menu/site.png'),
-          // msg: require('~assets/img/menu/msg.png'),
           daoru: require('assets/img/menu/daoru.png'),
-          // index: require('~assets/img/menu/index.png'),
+          index: require('assets/img/menu/index.png'),
           list: require('assets/img/menu/list.png'),
-          // list: '~assets/img/menu/list.png',
-          // daoru: '~assets/img/menu/daoru.png',
-          // photo: require('~assets/img/menu/photo.png'),
-          // poster: require('~assets/img/menu/poster.png'),
-          // propaganda: require('~assets/img/menu/propaganda.png'),
-          // applet: require('~assets/img/menu/applet.png'),
-          // export: require('~assets/img/menu/export.png'),
-          // shezhi: require('~assets/img/menu/shezhi.png')
         },
         asideLlist: null,
         asideLlistHome: null,

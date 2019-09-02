@@ -108,3 +108,6 @@ Router.prototype.push = function push(location) {
   return originalPush.call(this, location).catch(err => err)
 }
 ```
+### 2019-09-01 ###
+1. element的样式放在`element-variables.scss`中
+2. 关闭左侧资源自动展开  `explorer->auto reveal` 关闭即可
